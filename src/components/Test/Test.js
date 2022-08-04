@@ -13,7 +13,7 @@ const Test =() =>{
 
     },[])
     return(
-        <h1>Test for Food Finder ? or Dish finder ?</h1>
+        <h1>Test</h1>
 
     )
 }
