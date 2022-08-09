@@ -7,16 +7,23 @@ import loginSplash from "../../assets/loginSplash.jpg"
 import LoginForm from "./LoginForm";
 import {AuthContext} from '../Providers/AuthProviders'
 
+// login 
+
 const Login =()=>{
     const[query, setQuery]= useState({
         id:"",
         password:"",
+
+
+
 
     })
 
     const [auth, setAuth]= useContext(AuthContext)
     const navigate = useNavigate();
     console.log(auth);
+   
+
 
     const updateForm = (field, value)=>{
         
@@ -31,7 +38,9 @@ const Login =()=>{
         try{
             const res = await axios.get(`http://localhost:8080/api/profiles/${query.id}`)
             alert(`Hello ${res.data.name}`);
-            setAuth({id: res.data.id, name: res.data.name})
+            alert(`Hello ${res.data.owner}`);
+    
+            setAuth({id: res.data.id, name: res.data.name, owner:res.data.owner})
             // move user to home directory
             navigate('/')
         }catch (error){

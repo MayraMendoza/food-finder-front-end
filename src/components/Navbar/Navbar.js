@@ -3,7 +3,9 @@ import NavButton from './NavButton';
 import { AuthContext } from '../Providers/AuthProviders';
 
 
+
 const Navbar = (props) => {
+
   const [auth]= useContext(AuthContext);
   return (
     <Fragment>
@@ -32,21 +34,38 @@ const Navbar = (props) => {
           userSelect: "none",
           alignItems: 'center',
         }}>
+          
+        
             {auth.id ?(
               <p style={{ frontweight: 'bold', color: 'white'}}>Hi {auth.name}!</p>
             ):null}
             <NavButton to="/" label='Home'/>
+            
             {auth.id?(
+              
               <Fragment>
                 <NavButton to ="/profile" label='Profile'/>
                 <NavButton to="/restaurants" label='Restaurants'/>
                 <NavButton to="dishes" label='Dishes'/>
+                {/* <NavButton to="/MyRestaurant" label ='MyRestaurant'/> */}
 
+                {auth.owner?(
+                  <Fragment>
+                    <NavButton to="/MyRestaurant" label ='MyRestaurant'/>
+                  </Fragment>
+                ):null}
               </Fragment>
 
             ):(
               <NavButton to="/Login" label='Login'/>
             )}
+            {/* // if owner is true then show my restaurant tab.
+            {auth.owner?(
+              <Fragment>
+                <NavButton to="/MyRestaurant" label ='MyRestaurant'/>
+                
+              </Fragment>
+            ):null} */}
             
             
             {/* <NavButton to="/test" label='Test'/> */}

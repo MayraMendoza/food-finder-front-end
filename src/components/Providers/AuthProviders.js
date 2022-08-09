@@ -5,7 +5,7 @@ const AuthContext = React.createContext([{}, () => {}])
 
 const AuthProviders =(props)=> {
 
-    const[auth, setAuth] =useState({id: null, name:""});
+    const[auth, setAuth] =useState({id: null, name:"", owner:""});
     return(
         <AuthContext.Provider value={[auth,setAuth]}>
             {props.children}
