@@ -1,12 +1,11 @@
 import React from "react";
-import Container from "../common/Container";
+import BoardCard from '../common/BorderCard'
 
 const MyRestaurantDishes =() =>{
     return(
-        <Container>
-            <h1>My Restaurant Dishes</h1>
-
-        </Container>
+        <BoardCard>
+            <h1>hi</h1>
+        </BoardCard>
     )
 }
 export default MyRestaurantDishes;

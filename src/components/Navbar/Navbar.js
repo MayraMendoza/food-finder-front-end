@@ -47,7 +47,8 @@ const Navbar = (props) => {
                 <NavButton to ="/profile" label='Profile'/>
                 <NavButton to="/restaurants" label='Restaurants'/>
                 <NavButton to="dishes" label='Dishes'/>
-                {/* <NavButton to="/MyRestaurant" label ='MyRestaurant'/> */}
+
+                {/* // if owner is true then show my restaurant tab. */}
 
                 {auth.owner?(
                   <Fragment>
@@ -59,13 +60,6 @@ const Navbar = (props) => {
             ):(
               <NavButton to="/Login" label='Login'/>
             )}
-            {/* // if owner is true then show my restaurant tab.
-            {auth.owner?(
-              <Fragment>
-                <NavButton to="/MyRestaurant" label ='MyRestaurant'/>
-                
-              </Fragment>
-            ):null} */}
             
             
             {/* <NavButton to="/test" label='Test'/> */}
