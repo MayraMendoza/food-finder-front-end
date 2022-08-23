@@ -1,17 +1,28 @@
 import axios from "axios"
 import React from "react";
 import NewDishForm from "./NewDishForm";
-import BoardCard from "../common/BorderCard"
+import BorderCard from "../common/BorderCard"
+import Container from "../common/Container";
+import Button from "../common/Button";
+
 // this will hold all dishes that are connected to restaurant/ owner
 
 const MyRestaurantDishes =(props) =>{
     return(
-        <BoardCard>
-            <h1>{props.MyRestaurantDishes.itemName}</h1>
-            <h1>{props.MyRestaurantDishes.description}</h1>
-            <h1>{props.MyRestaurantDishes.price}</h1>
+        <BorderCard>
+            <h1> {props.MenuItem.itemName} </h1>
+            <p> description: {props.MenuItem.description}</p>
+            <p>price: {props.MenuItem.price}</p>
+            <Button style ={{backgroundColor: 'orange'}}> Edit
+                
+            </Button>
 
-        </BoardCard>
+        </BorderCard>
+        
+
+
+        
+        
        
     )
 }

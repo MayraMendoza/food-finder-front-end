@@ -11,7 +11,7 @@ const NewDishForm = (props) => {
     }
     return(
         <Container>
-            <Form onSubmit = {props.onSubmit} style={{marginTop: '10em'}}>
+            <Form onSubmit = {props.onSubmit} style={{marginTop: '2em'}}>
                 <InlineInputContainer>
                     <Input
                     name = "itemName"
@@ -43,9 +43,12 @@ const NewDishForm = (props) => {
                     />
                 </InlineInputContainer>
                 <Button>Submit</Button>
+               
+            
             
 
             </Form>
+
         </Container>
     )
 

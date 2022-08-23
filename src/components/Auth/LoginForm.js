@@ -4,6 +4,7 @@ import Form from '../common/Form'
 import InlineInputContainer from '../common/InlineInputContainer'
 import Input from '../common/Input'
 import Button from '../common/Button'
+import { useNavigate } from 'react-router-dom';
 
 
 const LoginForm = (props) =>{
@@ -13,6 +14,10 @@ const LoginForm = (props) =>{
         // this whole function is the same as this 
         //onChange={(e)=> props.updateForm(e.target.id, e.target.value)}
         // being converted to this----->onChange={handleChange}
+    }
+    const navigate = useNavigate();
+    const handleSignUpButton =(e) =>{
+        navigate('/SignUp') 
     }
     return(
         <Container>
@@ -41,6 +46,10 @@ const LoginForm = (props) =>{
                 </InlineInputContainer>
                 <Button>Submit</Button>
 
+
+            </Form>
+            <Form onSubmit={handleSignUpButton}>
+                <Button>sign up</Button>
             </Form>
         </Container>
     )

@@ -1,9 +1,10 @@
+import { findByLabelText } from '@testing-library/react';
 import React from 'react';
 
 const BorderCard = (props) => {
 
   return (
-    <div
+    <div id= "flex"
       style={{...styles.card, ...props.style}}
       onClick={props.onClick}
     >
@@ -20,10 +21,13 @@ const styles = {
     margin: '10px',
     padding: '10px',
     width: "80%",
+    minWidth: 200,
     maxWidth: 500,
-    backgroundColor: "lightblue",
+    backgroundColor: "lightgrey",
     boxShadow: '1px 1px 20px rgba(91, 91, 91, 0.5)'
   }
+  
+  
 }
 
 export default BorderCard;

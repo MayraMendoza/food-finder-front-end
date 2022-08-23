@@ -1,17 +1,24 @@
 import axios from "axios"
 import React, {useState, useEffect, useContext} from "react";
+import { DishContext} from "../MyRestaurant/DishProvidors"
 import Container from "../common/Container";
 import MyRestaurantDishes from "./MyRestaurantDishes";
 
 const Dish=()=>{
-    const[ Dish, setDish]= useState([]);
+    const[ dish, setDish]= useState([]);
     const [loading, setLoading]= useState(true);
+    const [Dish] = useContext(DishContext)
+
+    // GET: get and display all dishes. 
 
     useEffect(()=>{
         const getDish = async() =>{
             try{
                 const dishRes = await axios.get(`http://localhost:8080/api/menuitems/Restaurant/3`)
-                console.log(dishRes)
+
+                setDish(dishRes.data)
+                console.log(dishRes.data)
+                setLoading(false)
 
             }catch (error){
                 console.error(error.response? error.response.data: error.message)
@@ -19,16 +26,28 @@ const Dish=()=>{
         }
         getDish();
     },[])
-    const displayDishes =()=>{
-        return Dish.map(MyRestaurantDishes =>{
-            return(<MyRestaurantDishes MyRestaurantDishes ={MyRestaurantDishes}/>)
+    const displayDishes =() =>{
+        
+
+        
+        return dish.map( MenuItem => {
+            return(
+            <MyRestaurantDishes MenuItem = {MenuItem}/>
+            )
         })
+    
     }
     return(
-        <Container>
-            <h1>Dish</h1>
+        <Container >
+            <h1>My Dishes</h1>
             {loading?(<p>Loading...</p>):
-            displayDishes()
+            (
+                <div id= "flex" fontSize="10" >
+                    {displayDishes()}
+
+                </div>
+            )
+            
         }
         </Container>
     )

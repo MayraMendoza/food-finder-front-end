@@ -26,7 +26,7 @@ const Navbar = (props) => {
           fontWeight: 'bold',
           fontSize: '2.5em',
           margin: "0 20px"
-        }}>Restaurant Finder </h1>
+        }}>CRAVE </h1>
         <div style={{
           margin: '0 20px',
           flexDirection: 'row',

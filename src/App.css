@@ -24,6 +24,7 @@
   color: white;
 }
 
+
 .App-link {
   color: #61dafb;
 }
@@ -35,6 +36,21 @@
   to {
     transform: rotate(360deg);
   }
+}
+.container {
+  display: flex;
+  flex-direction: column ;
+  width: fit-content;
+  margin: auto;
+}
+#flex {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  margin: auto;
+}
+.item {
+  width: 100px;
 }
 
 div{

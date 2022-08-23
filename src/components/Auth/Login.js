@@ -14,25 +14,20 @@ const Login =()=>{
         id:"",
         password:"",
 
-
-
-
     })
 
     const [auth, setAuth]= useContext(AuthContext)
     const navigate = useNavigate();
     console.log(auth);
    
-
-
     const updateForm = (field, value)=>{
         
         setQuery({
             ...query,
             [field]: value
         })
-
     }
+
     const onSubmit = async()=>{
         const data = query;
         try{
@@ -55,10 +50,10 @@ const Login =()=>{
             <h1 style={{ color: 'white'}}>Login</h1>
             <Container>
             <LoginForm onSubmit ={onSubmit} query ={query} updateForm={updateForm}/>
+            <button>Don't have an account yet?</button>
             </Container>
 
             </Splash>
-            {/* <LoginForm onSubmit ={onSubmit} query ={query} updateForm={updateForm}/> */}
         </Container>
     
         
