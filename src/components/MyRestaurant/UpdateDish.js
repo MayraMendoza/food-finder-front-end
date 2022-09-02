@@ -1,12 +1,14 @@
+// - will get info from update dish form and send a post request to existing id 
+
 import React,{useState, useContext} from "react";
 import {useNavigate} from "react-router-dom";
 import axios from "axios"
 import Container from "../common/Container";
 import { AuthContext } from "../Providers/AuthProviders";
-import NewDishForm from "./NewDishForm";
+// import NewDishForm from "./NewDishForm";
 import { DishContext, DishProviders } from "./DishProvidors";
 
-const AddDish = () => {
+const UpdateDish = () => {
     const[query, setQuery]= useState({
         itemName:"",
         description:"",
@@ -38,7 +40,7 @@ const AddDish = () => {
             const restaurantId= getProfile.data.restaurant.id 
             //test
 
-            const res = await axios.post(`http://localhost:8080/api/menuitems/restaurant/${restaurantId}`,data)
+            const res = await axios.put(`http://localhost:8080/api/menuitems/restaurant/${restaurantId}`,data)
 
             console.log(res.data)
 
@@ -52,9 +54,9 @@ const AddDish = () => {
     }
     return(
         <Container>
-            <NewDishForm onSubmit={onSubmit} query={query} updateForm={updateForm}/>
+            <updateForm onSubmit={onSubmit} query={query} updateForm={updateForm}/>
         </Container>
     )
 
 }
-export default AddDish;
+export default UpdateDish;

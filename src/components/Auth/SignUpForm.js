@@ -5,25 +5,36 @@ import Form from '../common/Form'
 import InlineInputContainer from '../common/InlineInputContainer'
 import Input from '../common/Input'
 import Button from '../common/Button'
-// import { Input, Button, checkbox } from "react-advanced-form-addons";
-
-{/*
-This Form will be used to taking a person information to create a new profile
-it will have a spot where it asks if the user is an owner = when its clicked it will set that field to true...
-*/}
 
 
+const SignUpForm= ({onSubmit, query, updateForm}) =>{
+
+    const[isChecked, setIsChecked] = useState(false);
+    const handleChangeIsOwner =()=>{
+
+        // console.log(isOwner)\
+        const checkedBox = document.getElementById("isOwner")
+
+        if(checkedBox.checked){
+            updateForm("isOwner", true)
+        }else{
+            updateForm("isOwner", false)
+
+        }
+
+        // setIsChecked(current => !current)
+        
+    }
 
 
-const signUpForm= ({onSubmit, query, updateForm}) =>{
-    // const[isOwner, setIsOwner] = useState("true");
-    // state ={isOwner:false};
-    // const [isSubscribed, setIsSubscribed] = useState(true);
+
+   
     const handleChange =(e) =>{
         updateForm(e.target.id, e.target.value)
-
-
+    
+    
     }
+   
     return(
         <Container>
             <Form onSubmit ={onSubmit} style={{margintOP: '10em'}}>
@@ -60,11 +71,12 @@ const signUpForm= ({onSubmit, query, updateForm}) =>{
                 <InlineInputContainer>
                     <Input
                     name="password"
-                    id = "passWord"
+                    id = "password"
                     placeholder = "Password"
                     value= {query.password}
                     onChange = {handleChange}
                     required
+                    type="password"
                     />
                 </InlineInputContainer>
                 <InlineInputContainer>
@@ -84,10 +96,11 @@ const signUpForm= ({onSubmit, query, updateForm}) =>{
                     type = "checkbox"
                     id = "isOwner"
                     label= "Are you a restaurant owner?"
-                    defaultChecked = {false}
+                    // defaultChecked = {false}
+                    // checked = {isChecked}
                     value = {query.isOwner}
-                    // Checked= {}
-                    onChange = {handleChange}
+                    onChange = {handleChangeIsOwner}
+                    // onChange = {handleChange}
                     
                     />
                 <Button>Submit</Button>
@@ -98,4 +111,4 @@ const signUpForm= ({onSubmit, query, updateForm}) =>{
     )
 
 }
-export default signUpForm;
+export default SignUpForm;

@@ -10,6 +10,7 @@ import Navbar from "../components/Navbar/Navbar";
 import Test from "../components/Test/Test";
 import MyRestaurant from "../components/MyRestaurant/MyRestaurant"
 import SignUp from "../components/Auth/SignUp";
+import UpdateDish from "../components/MyRestaurant/UpdateDishForm";
 
 const AppRouter =() =>{
 
@@ -30,6 +31,7 @@ const AppRouter =() =>{
                 <Route path="/test" element={<Test/>}/>
                 <Route path ="/MyRestaurant" element={<MyRestaurant/>}/>
                 <Route path = "/SignUp" element={<SignUp/>}/>
+                <Route path = "/updateDish" element={<UpdateDish/>}/>
                 
 
             </Routes>

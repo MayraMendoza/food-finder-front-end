@@ -3,22 +3,48 @@ import React, {useState, useEffect, useContext} from "react";
 import { DishContext} from "../MyRestaurant/DishProvidors"
 import Container from "../common/Container";
 import MyRestaurantDishes from "./MyRestaurantDishes";
+import { AuthContext } from "../Providers/AuthProviders";
 
 const Dish=()=>{
     const[ dish, setDish]= useState([]);
     const [loading, setLoading]= useState(true);
     const [Dish] = useContext(DishContext)
+    const [auth] =useContext(AuthContext)
 
     // GET: get and display all dishes. 
 
     useEffect(()=>{
         const getDish = async() =>{
             try{
-                const dishRes = await axios.get(`http://localhost:8080/api/menuitems/Restaurant/3`)
 
-                setDish(dishRes.data)
-                console.log(dishRes.data)
-                setLoading(false)
+
+            const getProfile =  await axios.get(`http://localhost:8080/api/profiles/${auth.id}`)
+            console.log(getProfile.data)
+            console.log(getProfile.data.restaurant.id)
+            console.log(getProfile)
+
+            const restaurantId= getProfile.data.restaurant.id 
+            console.log("hello");
+            console.log(restaurantId);
+            //test
+
+            const dishRes = await axios.get(`http://localhost:8080/api/menuitems/Restaurant/${restaurantId}`)
+            
+            setDish(dishRes.data)
+            console.log(dishRes.data)
+            setLoading(false)
+
+            
+
+            // //This will clear out add new dish fields.
+            // // setQuery({itemName: '',description: '', price: ''})
+            
+
+                // const dishRes = await axios.get(`http://localhost:8080/api/menuitems/Restaurant/3`)
+
+                // setDish(dishRes.data)
+                // console.log(dishRes.data)
+                // setLoading(false)
 
             }catch (error){
                 console.error(error.response? error.response.data: error.message)

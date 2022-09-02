@@ -13,7 +13,7 @@ const SignUp =()=>{
         userName:"",
         password:"",
         favoriteFood:"",
-        isOwner:"",
+        isOwner: false ,
 
     })
     const[auth, setAuth]= useContext(AuthContext)
