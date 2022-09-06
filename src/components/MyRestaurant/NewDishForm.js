@@ -8,6 +8,8 @@ import Button from '../common/Button'
 this form will be used to get input that will be used in addDish. to add a new dish to a specific profile. 
 */
 
+/**MM */
+
 const NewDishForm = (props) => {
     const handleChange =(e) =>{
         props.updateForm(e.target.id, e.target.value)
