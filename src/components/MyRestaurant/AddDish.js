@@ -6,6 +6,10 @@ import { AuthContext } from "../Providers/AuthProviders";
 import NewDishForm from "./NewDishForm";
 import { DishContext, DishProviders } from "./DishProvidors";
 
+/*
+this will be used to add a new dish to a restaurant by owner. 
+*/
+
 const AddDish = () => {
     const[query, setQuery]= useState({
         itemName:"",

@@ -17,9 +17,6 @@ const MyRestaurantDishes =(props) =>{
         const dishId = props.MenuItem.id
         alert(dishId)
         // navigate("/updateDish");
-        
-
-        
 
     }
     return(
@@ -32,10 +29,6 @@ const MyRestaurantDishes =(props) =>{
             </Button>
 
         </BorderCard>
-        
-
-
-        
         
        
     )

@@ -1,11 +1,15 @@
 import axios from "axios"
 import React, {useState, useEffect, useContext} from "react";
-import { DishContext} from "../MyRestaurant/DishProvidors"
+import { DishContext} from "./DishProvidors"
 import Container from "../common/Container";
 import MyRestaurantDishes from "./MyRestaurantDishes";
 import { AuthContext } from "../Providers/AuthProviders";
 
-const Dish=()=>{
+/* this document will be used to display all dishes in a specific restaurant 
+(this can only be accessed by the restaurants owner). This will ise My restaurant dishes to format how dishes will be displayed)
+*/
+
+const Dishes=()=>{
     const[ dish, setDish]= useState([]);
     const [loading, setLoading]= useState(true);
     const [Dish] = useContext(DishContext)
@@ -52,10 +56,9 @@ const Dish=()=>{
         }
         getDish();
     },[])
-    const displayDishes =() =>{
-        
 
-        
+
+    const displayDishes =() =>{
         return dish.map( MenuItem => {
             return(
             <MyRestaurantDishes MenuItem = {MenuItem}/>
@@ -78,4 +81,4 @@ const Dish=()=>{
         </Container>
     )
 }
-export default Dish;
+export default Dishes;

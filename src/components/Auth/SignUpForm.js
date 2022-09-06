@@ -6,9 +6,15 @@ import InlineInputContainer from '../common/InlineInputContainer'
 import Input from '../common/Input'
 import Button from '../common/Button'
 
+/**
+ * This form will take input from users that want to create a new account. 
+ */
+
 
 const SignUpForm= ({onSubmit, query, updateForm}) =>{
 
+
+    // this section will check if the user has checked a box indicating if they are an owner or not. 
     const[isChecked, setIsChecked] = useState(false);
     const handleChangeIsOwner =()=>{
 

@@ -4,6 +4,9 @@ import Form from '../common/Form'
 import InlineInputContainer from '../common/InlineInputContainer'
 import Input from '../common/Input'
 import Button from '../common/Button'
+/*
+this form will be used to get input that will be used in addDish. to add a new dish to a specific profile. 
+*/
 
 const NewDishForm = (props) => {
     const handleChange =(e) =>{

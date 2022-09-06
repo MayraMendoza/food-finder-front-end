@@ -5,6 +5,10 @@ import Container from "../common/Container";
 import SignUpForm from "./SignUpForm";
 import { AuthContext } from "../Providers/AuthProviders";
 
+/*
+this will take in all the data a user has passed in the form and send it to an endpoint. 
+ */
+
 
 const SignUp =()=>{
     const[query, setQuery]= useState({

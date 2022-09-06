@@ -4,9 +4,9 @@ import Splash from "../common/Splash";
 import dishSplash from "../../assets/dishSplash.jpg"
 import BorderCard from '../common/BorderCard'
 
-// will use this to add dishes / display dishes {owner}
+// This will be used to display all dishes to the users. 
 
-const Dishes =()=>{
+const AllDishes =()=>{
     return(
         <Container>
             
@@ -47,4 +47,4 @@ const Dishes =()=>{
         </Container>
     )
 }
-export default Dishes;
+export default AllDishes;

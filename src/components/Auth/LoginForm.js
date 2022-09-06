@@ -6,6 +6,9 @@ import Input from '../common/Input'
 import Button from '../common/Button'
 import { useNavigate } from 'react-router-dom';
 
+/* This form will take in input from log in page to get a person profile. in this page we also have a naviate call 
+that will lead users to a sign up page where they can sign up and create a new account.
+*/
 
 const LoginForm = (props) =>{
     const handleChange =(e) =>{
