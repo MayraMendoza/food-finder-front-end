@@ -6,7 +6,7 @@ import MyRestaurantDishes from "./MyRestaurantDishes";
 import { AuthContext } from "../Providers/AuthProviders";
 
 /* this document will be used to display all dishes in a specific restaurant 
-(this can only be accessed by the restaurants owner). This will ise My restaurant dishes to format how dishes will be displayed)
+(this can only be accessed by the restaurants owner). This will use My restaurant dishes to format how dishes will be displayed)
 */
 
 const Dishes=()=>{
